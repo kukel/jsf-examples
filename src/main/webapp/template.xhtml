@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html">
+
+	<h:head>
+	
+		<title>JSF Examples (<ui:insert name="title">Title not specified</ui:insert>)
+		</title>
+	
+		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/default.css" />
+		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/syntaxhighlighter/syntaxhighlighter.css" />
+
+		<script language="javascript" src="#{request.contextPath}/syntaxhighlighter/scripts/sh.js"></script>
+ 		<script language="javascript">
+                        dp.SyntaxHighlighter.ClipboardSwf = '#{request.contextPath}/syntaxhighlighter/scripts/clipboard.swf';
+                       
+        </script>
+	</h:head>
+	<h:body>
+		<p:growl autoUpdate="true" />
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" gutter="0" size="60" style="visibility: visible">
+				<div class="ui-widget ui-widget-header">JSF EXAMPLES</div>
+			</p:layoutUnit>
+			<p:layoutUnit position="west" gutter="0" size="160" style="visibility: visible">
+				<h:form>
+					<p:panelMenu>
+						<f:facet name="title">Examples</f:facet>
+						<p:submenu label="MyExamples">
+							<p:menuitem title="Example 1" value="Example 1" url="/example1.jsf" />
+						</p:submenu>
+						<p:submenu label="OtherExamples">
+							<p:menuitem title="Example 2" value="Example 2" url="/example2.jsf" />
+						</p:submenu>
+					</p:panelMenu>
+				</h:form>
+			</p:layoutUnit>
+			<p:layoutUnit position="center" gutter="0" style="overflow: hidden; visibility: visible">
+				<h2 class="title ui-widget-header ui-corner-all" style="margin: 0px">
+					<ui:insert name="title" />
+				</h2>
+				<div class="entry">
+					
+					<ui:insert name="src" />
+					
+		<h3>Source</h3>
+					<ui:insert name="content"></ui:insert>
+				</div>
+			</p:layoutUnit>
+	
+		</p:layout>
+	</h:body>
+</f:view>
+</html>
+

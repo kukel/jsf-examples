@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui" template="template.xhtml">
+
+	<ui:define name="title">Example 1</ui:define>
+
+	<ui:define name="src">
+		<ui:include src="example1-src.xhtml"  />
+	</ui:define>
+	
+	<ui:define name="content">
+
+		<p:tabView>
+			<p:tab title="example1-src.xhtml">
+				<pre id="example1-src" name="example1-src" class="xml"/>
+				<script>
+				$('#example1-src').load('example1-src.xhtml', function(){
+			            dp.SyntaxHighlighter.HighlightAll('example1-src');
+				});
+
+				</script>
+			</p:tab>
+			<p:tab title="File.java">
+				<pre id="file" name="file" class="java"/>
+				<script>
+				$('#file').load('sources/net/vankuijk/ronald/jsfexamples/domain/File.java', function(){
+			            dp.SyntaxHighlighter.HighlightAll('file');
+				});
+
+				</script>
+			</p:tab>
+			<p:tab title="TableBean.java">
+				<pre id="tableBean" name="tableBean" class="java"/>
+				<script>
+				$('#tableBean').load('sources/net/vankuijk/ronald/jsfexamples/view/TableBean.java', function(){
+			            dp.SyntaxHighlighter.HighlightAll('tableBean');
+				});
+
+				</script>
+			</p:tab>
+
+		</p:tabView>
+
+	</ui:define>
+</ui:composition>
+

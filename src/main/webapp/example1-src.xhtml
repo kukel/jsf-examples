@@ -1,0 +1,21 @@
+<f:subview xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+	<p>This is text</p>
+	<h:form id="form" prependId="false">
+
+		<h:panelGrid columns="2">
+			<h:outputText value="Content with Filter:" />
+			<p:selectOneMenu value="#{interchangesBean.selectedFile}" panelStyle="width:150px" effect="fade" var="p" style="width:160px" filter="true" filterMatchMode="startsWith">
+				<f:selectItem itemLabel="Select One" itemValue="" />
+				<f:selectItems value="#{interchangesBean.files}" var="file" itemLabel="#{file.name}" itemValue="#{file}" />
+
+				<p:column>#{p.name}</p:column>
+
+				<p:column>
+					<h:outputText value="#{fn:length(p.files)}" />
+				</p:column>
+
+			</p:selectOneMenu>
+		</h:panelGrid>
+	</h:form>
+</f:subview>
+
